@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["esnext"],
+    "rootDir": "src",
+    "outDir": "Solar 2d TS game",
+    "types": [
+      "lua-types/jit",
+      "love-typescript-definitions",
+      "@typescript-to-lua/language-extensions"
+    ]
+  },
+  "tstl": {
+    "luaLibImport": "require",
+    // "luaTarget": "JIT",
+    "noImplicitSelf": true,
+    "sourceMapTraceback": true
+  }
+}

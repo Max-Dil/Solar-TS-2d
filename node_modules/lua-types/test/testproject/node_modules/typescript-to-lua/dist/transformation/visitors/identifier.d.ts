@@ -1,0 +1,6 @@
+import * as ts from "typescript";
+import * as lua from "../../LuaAST";
+import { FunctionVisitor, TransformationContext } from "../context";
+export declare function transformIdentifier(context: TransformationContext, identifier: ts.Identifier): lua.Identifier;
+export declare function transformIdentifierWithSymbol(context: TransformationContext, node: ts.Identifier, symbol: ts.Symbol | undefined): lua.Expression;
+export declare const transformIdentifierExpression: FunctionVisitor<ts.Identifier>;

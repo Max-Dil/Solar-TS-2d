@@ -1,0 +1,12 @@
+import * as ts from "typescript";
+import * as lua from "../../../LuaAST";
+import { FunctionVisitor, TransformationContext } from "../../context";
+import { BitOperator } from "./bit";
+import { WithPrecedingStatements } from "../../utils/preceding-statements";
+type ShortCircuitOperator = ts.SyntaxKind.AmpersandAmpersandToken | ts.SyntaxKind.BarBarToken | ts.SyntaxKind.QuestionQuestionToken;
+type SimpleOperator = ts.AdditiveOperatorOrHigher | Exclude<ts.RelationalOperator, ts.SyntaxKind.InstanceOfKeyword | ts.SyntaxKind.InKeyword> | ts.EqualityOperator | ts.LogicalOperator;
+export declare function createShortCircuitBinaryExpressionPrecedingStatements(context: TransformationContext, lhs: lua.Expression, rhs: lua.Expression, rightPrecedingStatements: lua.Statement[], operator: ShortCircuitOperator, node?: ts.BinaryExpression): WithPrecedingStatements<lua.Expression>;
+export declare function transformBinaryOperation(context: TransformationContext, left: lua.Expression, right: lua.Expression, rightPrecedingStatements: lua.Statement[], operator: BitOperator | SimpleOperator | ts.SyntaxKind.QuestionQuestionToken, node: ts.Node): WithPrecedingStatements<lua.Expression>;
+export declare const transformBinaryExpression: FunctionVisitor<ts.BinaryExpression>;
+export declare function transformBinaryExpressionStatement(context: TransformationContext, node: ts.ExpressionStatement): lua.Statement[] | lua.Statement | undefined;
+export {};

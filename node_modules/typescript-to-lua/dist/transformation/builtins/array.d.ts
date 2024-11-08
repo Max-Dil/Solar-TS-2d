@@ -1,0 +1,6 @@
+import * as ts from "typescript";
+import * as lua from "../../LuaAST";
+import { TransformationContext } from "../context";
+export declare function transformArrayConstructorCall(context: TransformationContext, node: ts.CallExpression, calledMethod: ts.PropertyAccessExpression): lua.Expression | undefined;
+export declare function transformArrayPrototypeCall(context: TransformationContext, node: ts.CallExpression, calledMethod: ts.PropertyAccessExpression): lua.Expression | undefined;
+export declare function transformArrayProperty(context: TransformationContext, node: ts.PropertyAccessExpression): lua.Expression | undefined;
