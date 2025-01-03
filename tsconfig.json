@@ -6,8 +6,8 @@
     "rootDir": "src",
     "outDir": "Solar 2d TS game",
     "types": [
-      "lua-types/jit",
-      "love-typescript-definitions",
+      "lua-types/5.1",
+      // "solar-typescript-definitions",
       "@typescript-to-lua/language-extensions"
     ]
   },
